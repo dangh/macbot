@@ -79,24 +79,24 @@ run defaults write com.apple.dock expose-animation-duration -float 0.1
 echo "Remove the auto-hiding dock delay."
 run defaults write com.apple.dock autohide-delay -int 0
 
-echo "Use the dark theme."
-run defaults write ~/Library/Preferences/.GlobalPreferences AppleInterfaceStyle -string "Dark"
+# echo "Use the dark theme."
+# run defaults write ~/Library/Preferences/.GlobalPreferences AppleInterfaceStyle -string "Dark"
 
 echo "Save screenshots in PNG format."
 run defaults write com.apple.screencapture type -string png
 
-echo "Save screenshots to user screenshots directory instead of desktop."
-run mkdir ~/screenshots
-run defaults write com.apple.screencapture location -string ~/screenshots
+# echo "Save screenshots to user screenshots directory instead of desktop."
+# run mkdir ~/screenshots
+# run defaults write com.apple.screencapture location -string ~/screenshots
 
 echo "Disable menu transparency."
 run defaults write com.apple.universalaccess reduceTransparency -int 1
 
-echo "Increase contrast."
-run defaults write com.apple.universalaccess increaseContrast -int 1
+# echo "Increase contrast."
+# run defaults write com.apple.universalaccess increaseContrast -int 1
 
-echo "Disable mouse enlargement with jiggle."
-run defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool true
+# echo "Disable mouse enlargement with jiggle."
+# run defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool true
 
 echo "Disable annoying UI error sounds."
 run defaults write com.apple.systemsound com.apple.sound.beep.volume -int 0
@@ -111,8 +111,8 @@ run defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo "Disable the warning when changing a file extension."
 run defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo "Use list view in all Finder windows by default."
-run defaults write com.apple.finder FXPreferredViewStyle -string '"Nlsv"'
+# echo "Use list view in all Finder windows by default."
+# run defaults write com.apple.finder FXPreferredViewStyle -string '"Nlsv"'
 
 echo "Show the ~/Library folder."
 run chflags nohidden ~/Library
@@ -132,39 +132,39 @@ run defaults write DSDontWriteNetworkStores com.apple.desktopservices -int 1
 echo "Don't ask to use external drives as a Time Machine backup."
 run defaults write DoNotOfferNewDisksForBackup com.apple.TimeMachine -int 1
 
-echo "Disable natural scrolling."
-run defaults write ~/Library/Preferences/.GlobalPreferences com.apple.swipescrolldirection -bool false
+# echo "Disable natural scrolling."
+# run defaults write ~/Library/Preferences/.GlobalPreferences com.apple.swipescrolldirection -bool false
 
 # Security And Privacy Improvements
-echo "Disable Safari from auto-filling sensitive data."
-run defaults write ~/Library/Preferences/com.apple.Safari AutoFillCreditCardData -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari AutoFillFromAddressBook -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari AutoFillMiscellaneousForms -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari AutoFillPasswords -bool false
+# echo "Disable Safari from auto-filling sensitive data."
+# run defaults write ~/Library/Preferences/com.apple.Safari AutoFillCreditCardData -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari AutoFillFromAddressBook -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari AutoFillMiscellaneousForms -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari AutoFillPasswords -bool false
 
-echo "Disable Safari from automatically opening files."
-run defaults write ~/Library/Preferences/com.apple.Safari AutoOpenSafeDownloads -bool false
+# echo "Disable Safari from automatically opening files."
+# run defaults write ~/Library/Preferences/com.apple.Safari AutoOpenSafeDownloads -bool false
 
-echo "Always block cookies and local storage in Safari."
-run defaults write ~/Library/Preferences/com.apple.Safari BlockStoragePolicy -bool false
+# echo "Always block cookies and local storage in Safari."
+# run defaults write ~/Library/Preferences/com.apple.Safari BlockStoragePolicy -bool false
 
 echo "Enable Safari warnings when visiting fradulent websites."
 run defaults write ~/Library/Preferences/com.apple.Safari WarnAboutFraudulentWebsites -bool true
 
-echo "Disable javascript in Safari."
-run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptEnabled -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari WebKitJavaScriptEnabled -bool false
+# echo "Disable javascript in Safari."
+# run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptEnabled -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari WebKitJavaScriptEnabled -bool false
 
 echo "Block popups in Safari."
 run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
 run defaults write ~/Library/Preferences/com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
 
-echo "Disable plugins and extensions in Safari."
-run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2WebGLEnabled -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari WebKitPluginsEnabled -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari ExtensionsEnabled -bool false
-run defaults write ~/Library/Preferences/com.apple.Safari PlugInFirstVisitPolicy PlugInPolicyBlock
+# echo "Disable plugins and extensions in Safari."
+# run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2WebGLEnabled -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari WebKitPluginsEnabled -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari ExtensionsEnabled -bool false
+# run defaults write ~/Library/Preferences/com.apple.Safari PlugInFirstVisitPolicy PlugInPolicyBlock
 run defaults write ~/Library/Preferences/com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
 run defaults write ~/Library/Preferences/com.apple.Safari WebKitJavaEnabled -bool false
 
@@ -174,11 +174,11 @@ run defaults write ~/Library/Preferences/com.apple.Safari TreatSHA1CertificatesA
 echo "Disable pre-loading websites with high search rankings."
 run defaults write ~/Library/Preferences/com.apple.Safari PreloadTopHit -bool false
 
-echo "Disable Safari search engine suggestions."
-run defaults write ~/Library/Preferences/com.apple.Safari SuppressSearchSuggestions -bool true
+# echo "Disable Safari search engine suggestions."
+# run defaults write ~/Library/Preferences/com.apple.Safari SuppressSearchSuggestions -bool true
 
-echo "Enable Do-Not-Track HTTP header in Safari."
-run defaults write ~/Library/Preferences/com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+# echo "Enable Do-Not-Track HTTP header in Safari."
+# run defaults write ~/Library/Preferences/com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 echo "Disable pdf viewing in Safari."
 run defaults write ~/Library/Preferences/com.apple.Safari WebKitOmitPDFSupport -bool true
@@ -269,14 +269,14 @@ run brew install youtube-dl
 run brew install ffmpeg
 
 # Trust a curl | bash? Why not.
-echo "Install rust using Rustup."
-rustc --version
-if [[ $? != 0 ]] ; then
-    run curl https://sh.rustup.rs -sSf | sh
-fi
+# echo "Install rust using Rustup."
+# rustc --version
+# if [[ $? != 0 ]] ; then
+#     run curl https://sh.rustup.rs -sSf | sh
+# fi
 
-echo "Install rustfmt."
-run cargo install rustfmt
+# echo "Install rustfmt."
+# run cargo install rustfmt
 
 # Install all the Mac App Store applications using mas. https://github.com/mas-cli/mas
 mac_app_login=$(mas account | grep @)
@@ -286,20 +286,20 @@ if [ -z "$mac_app_login" ] ; then
     run mas signin $mac_app_login
 fi
 
-echo "Install Reeder."
-run mas install 880001334
+# echo "Install Reeder."
+# run mas install 880001334
 
-echo "Install Final Cut Pro."
-run mas install 424389933
+# echo "Install Final Cut Pro."
+# run mas install 424389933
 
-echo "Install Keynote."
-run mas install 409183694
+# echo "Install Keynote."
+# run mas install 409183694
 
-echo "Install Things."
-run mas install 407951449
+# echo "Install Things."
+# run mas install 407951449
 
-echo "Install Slack."
-run mas install 803453959
+# echo "Install Slack."
+# run mas install 803453959
 
 echo "Upgrade any Mac App Store applications."
 run mas upgrade
