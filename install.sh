@@ -18,19 +18,19 @@ headline() {
 }
 
 chapter() {
-    echo "${highlight} $((count++)).) $@ ${reset}\n"
+    printf "${highlight} $((count++)).) $@ ${reset}\n"
 }
 
 # Prints out a step, if last parameter is true then without an ending newline
 step() {
     if [ $# -eq 1 ]
-    then echo "${dot}$@"
-    else echo "${dot}$@"
+    then printf "${dot}$@\n"
+    else printf "${dot}$@"
     fi
 }
 
 run() {
-    echo "${dim}▹ $@ $reset"
+    printf "${dim}▹ $@ $reset\n"
     eval $@
 }
 
@@ -51,9 +51,9 @@ then
 fi
 
 step "Setting your computer name (as done via System Preferences → Sharing)."
-echo "What would you like it to be? $bold"
+printf "What would you like it to be? $bold"
 read computer_name
-echo "$reset"
+printf "$reset"
 run sudo scutil --set ComputerName "'$computer_name'"
 run sudo scutil --set HostName "'$computer_name'"
 run sudo scutil --set LocalHostName "'$computer_name'"
