@@ -102,7 +102,8 @@ echo "Disable annoying UI error sounds."
 run defaults write com.apple.systemsound com.apple.sound.beep.volume -int 0
 run defaults write com.apple.sound.beep feedback -int 0
 run defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -int 0
-run osascript -e 'set volume alert volume 0'
+printf "${dim}▹ osascript -e 'set volume alert volume 0' $reset\n"
+osascript -e 'set volume alert volume 0'
 
 echo "Show all filename extensions."
 run defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -198,7 +199,7 @@ echo "Disable Spotlight Suggestions, Bing Web Search, and other leaky data."
 run python ./fix_leaky_data.py
 
 echo "Disable Captive Portal Hijacking Attack."
-run defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+run sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 
 echo "Set screen to lock as soon as the screensaver starts."
 run defaults write com.apple.screensaver askForPassword -int 1
@@ -211,16 +212,16 @@ echo "Disable crash reporter."
 run defaults write com.apple.CrashReporter DialogType none
 
 echo "Enable Stealth Mode. Computer will not respond to ICMP ping requests or connection attempts from a closed TCP/UDP port."
-run defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+run sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
 
 echo "Set all network interfaces to use Google DNS."
 run bash ./use_google_dns.sh
 
 echo "Disable wake on network access."
-run systemsetup -setwakeonnetworkaccess off
+run sudo systemsetup -setwakeonnetworkaccess off
 
 echo "Disable Bonjour multicast advertisements."
-run defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool YES
+run sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool YES
 
 echo "Enable Mac App Store automatic updates."
 run defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
